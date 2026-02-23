@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensión eXpert | Automatización Estratégica con IA</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/DeXpert Social Icon.png">
+</head>
+
+<body>
+
+    <!-- Background Effect -->
+    <div class="bg-nodes"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="logo">
+                <img src="images/DeXpert Logo Wh.png" alt="Dimensión eXpert"
+                    onerror="this.src=''; this.alt='Dimensión eXpert'; this.style.color='#00f0ff'; this.style.fontFamily='Outfit'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold';">
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="nav-cta" onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">Solicitar
+                    Diagnóstico</button>
+                <button class="nav-cta"
+                    style="background: transparent; border: 1px solid var(--accent-cyan); color: var(--text-main);"
+                    onclick="window.open('https://booking.dimension.expert', '_blank')">Agendar Cita</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Loop -->
+        <video autoplay muted loop playsinline class="hero-video" id="heroVideo">
+            <source src="video/Cinematic_AI_Automation_Background_Loop-silence.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu empresa está perdiendo dinero cada minuto que pasa sin automatizar.</h1>
+                <p class="hero-subtitle">Da el salto a la Inteligencia Artificial. Automatizamos tu atención al cliente
+                    24/7, blindamos tu backoffice y conectamos todo tu ecosistema (CRMs, WhatsApp, ERPs). Escala tus
+                    ventas sin contratar más personal.</p>
+
+                <div class="cta-group">
+                    <button class="btn-primary"
+                        onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">🚀
+                        Solicitar Diagnóstico con IA
+                        (Gratis)</button>
+                    <button class="btn-secondary" onclick="scrollToAgitation()">▶ Ver cómo funciona</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Agitation -->
+    <section id="agitation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>El crecimiento de tu negocio está secuestrado por tareas manuales.</h2>
+            </div>
+
+            <div class="problem-grid">
+                <div class="glass problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3>Ventas perdidas</h3>
+                    <p>Porque nadie responde el WhatsApp a las 10 PM en fines de semana o feriados. Leads descartados
+                        que se van a la competencia.</p>
+                </div>
+
+                <div class="glass problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Equipos saturados</h3>
+                    <p>Tus empleados clave están infelices copiando y pegando datos, gestionando citas o persiguiendo
+                        facturas manualmente.</p>
+                </div>
+
+                <div class="glass problem-card">
+                    <div class="problem-icon">🌪️</div>
+                    <h3>Caos administrativo</h3>
+                    <p>Tienes herramientas útiles, pero no se hablan entre sí. Silos de información y procesos propensos
+                        al error humano.</p>
+                </div>
+            </div>
+
+            <div class="problem-statement glass">
+                La falta de automatización no es solo ineficiencia; es una fuga de capital silenciosa. Mientras tú
+                cierras el ordenador, la competencia automatizada sigue vendiendo.
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Core -->
+    <section class="section solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Bienvenido a la automatización inteligente.</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 1rem auto 0;">No
+                    vendemos "programitas". Construimos a medida agentes de IA y conectamos tus sistemas para que tu
+                    empresa trabaje sola.</p>
+            </div>
+
+            <div class="solution-grid">
+                <div class="glass solution-card">
+                    <div class="solution-content">
+                        <div class="solution-icon">🤖</div>
+                        <h3>Agentes de IA para Ventas y Soporte</h3>
+                        <p>Chatbots conversacionales (no de botones tontos). Atienden, cualifican y venden por WhatsApp
+                            y Web las 24 horas del día. Respuestas empáticas con el tono de tu marca.</p>
+                    </div>
+                </div>
+
+                <div class="glass solution-card">
+                    <div class="solution-content">
+                        <div class="solution-icon">⚙️</div>
+                        <h3>Backoffice Autónomo</h3>
+                        <p>Tus reglas de negocio ejecutadas a la velocidad de la luz. Automatización de procesos
+                            contables, administrativos, cobros y recordatorios.</p>
+                    </div>
+                </div>
+
+                <div class="glass solution-card">
+                    <div class="solution-content">
+                        <div class="solution-icon">🔄</div>
+                        <h3>Sincronización Total</h3>
+                        <p>Tu CRM, plataformas de pago, calendarios y Dashboards finalmente conectados en una sola
+                            fuente de verdad. Cero captura manual, cero errores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases / Sectors -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Si estás en estas industrias, nacimos para ayudarte.</h2>
+            </div>
+
+            <div class="tabs-container">
+                <div class="tabs-menu">
+                    <button class="tab-btn active" onclick="openTab(event, 'tab-1')">🏢 Comunidades y Despachos</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-2')">⚡ Servicios Técnicos</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-3')">🏥 Clínicas y Salud</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-4')">💼 PYMEs B2B</button>
+                </div>
+
+                <div class="glass tab-card">
+                    <div id="tab-1" class="tab-content active">
+                        <h3>Administraciones de Condominios y Despachos</h3>
+                        <p>Convierte el caos de recibos, asambleas y facturas en un backoffice invisible gestionado por
+                            IA. Reportes automáticos y atención a vecinos sin quemar a tu equipo.</p>
+                    </div>
+                    <div id="tab-2" class="tab-content">
+                        <h3>Servicios Técnicos y Energía</h3>
+                        <p>Asignación inteligente de instaladores, automatización de partes de trabajo, lectura de
+                            recibos de luz/gas con IA y atención a incidencias 24/7 sin operadores.</p>
+                    </div>
+                    <div id="tab-3" class="tab-content">
+                        <h3>Clínicas y Centros de Salud</h3>
+                        <p>Gestor inteligente de citas por WhatsApp, recordatorios automatizados y seguimiento de
+                            pacientes para reducir el ausentismo de tu agenda al 0%.</p>
+                    </div>
+                    <div id="tab-4" class="tab-content">
+                        <h3>PYMEs B2B y E-Commerce</h3>
+                        <p>Un agente comercial de IA que atiende a cada lead de inmediato, responde dudas técnicas
+                            complejas, lo califica y lo ingresa directamente a tu Embudo de Ventas (CRM).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transformamos tu operativa en 3 pasos claros.</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Auditoría con IA</h3>
+                    <p>Empezamos con un diagnóstico estratégico para encontrar tus cuellos de botella operativos más
+                        costosos.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Ecosistema a Medida</h3>
+                    <p>Desarrollamos tus agentes de IA e implementamos los flujos de integración en tu stack existente.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Escalabilidad Absoluta</h3>
+                    <p>Desplegamos tu nueva operativa. Te entregamos un negocio que funciona como un reloj suizo, 24/7.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <button class="btn-primary"
+                    onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">Quiero comenzar mi
+                    diagnóstico</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>El momento de integrar Inteligencia Artificial no es mañana. Era hace 12 meses.</h2>
+            <p>Deja de quemar horas de tu equipo en tareas operativas. Averigua exactamente cuántos procesos podrías
+                delegarle a la IA hoy mismo.</p>
+            <button class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"
+                onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">⚡ Quiero mi Diagnóstico con
+                IA</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/DeXpert Logo Wh.png" alt="Dimensión eXpert" height="30"
+                        onerror="this.style.display='none'">
+                    <h3 style="color: var(--accent-cyan); margin-top: 10px;" id="text-logo">Dimensión eXpert</h3>
+                    <p>Sistemas de automatización con IA que trabajan por tu negocio. Escala sin límites.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Soluciones</h4>
+                    <ul>
+                        <li><a href="#">Agentes de IA</a></li>
+                        <li><a href="#">Automatización WhatsApp</a></li>
+                        <li><a href="#">Backoffice Inteligente</a></li>
+                        <li><a href="#">Integración de CRM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dimension eXpert LLC. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-sticky-cta">
+        <button class="btn-primary" onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">Diagnóstico
+            con IA</button>
+    </div>
+
+    <!-- GDPR Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner glass">
+        <div class="cookie-content">
+            <p>Usamos cookies propias y de terceros para recordar sus preferencias y realizar análisis métricos
+                estadísticos de nuestro tráfico, de acuerdo con nuestra <a href="privacidad.html"
+                    style="color: var(--accent-cyan); text-decoration: underline;">Política de Privacidad</a>.</p>
+            <div class="cookie-buttons">
+                <button class="btn-primary" onclick="acceptCookies()">Aceptar todas</button>
+                <button class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 1rem;"
+                    onclick="rejectCookies()">Rechazar opcionales</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll Logic
+        function scrollToAgitation() {
+            document.getElementById('agitation').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Tabs Logic
+        function openTab(evt, tabId) {
+            // Get all tab content elements and hide them
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+
+            // Get all tab buttons and remove active class
+            const tabBtns = document.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove("active");
+            }
+
+            // Show current tab and add active class to button
+            document.getElementById(tabId).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Cookie Banner Logic
+        function initCookieBanner() {
+            const consent = localStorage.getItem('dexpert_cookie_consent');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookie-banner').classList.add('show');
+                }, 1500);
+            }
+        }
+
+        // Ejecutar inmediatamente o al cargar
+        if (document.readyState === 'loading') {
+            document.addEventListener("DOMContentLoaded", initCookieBanner);
+        } else {
+            initCookieBanner();
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('dexpert_cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            // Aquí se inicializarían los scripts de analytics
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('dexpert_cookie_consent', 'rejected');
+            document.getElementById('cookie-banner').classList.remove('show');
+        }
+
+
+    </script>
+</body>
+
+</html>
