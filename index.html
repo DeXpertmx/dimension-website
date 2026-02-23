@@ -32,6 +32,11 @@
                     onerror="this.src=''; this.alt='Dimensión eXpert'; this.style.color='#00f0ff'; this.style.fontFamily='Outfit'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold';">
             </div>
             <div style="display: flex; gap: 10px; align-items: center;">
+                <a href="blog.html"
+                    style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; margin-right: 15px; transition: color 0.3s;"
+                    onmouseover="this.style.color='var(--accent-cyan)'"
+                    onmouseout="this.style.color='var(--text-main)'">Recursos</a>
+
                 <button class="nav-cta" onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">Solicitar
                     Diagnóstico</button>
                 <button class="nav-cta"
@@ -222,6 +227,27 @@
         </div>
     </section>
 
+    <!-- Latest Resources (Blog Preview) -->
+    <section class="section" id="latest-resources"
+        style="background: rgba(0, 240, 255, 0.02); border-top: 1px solid var(--glass-border);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recursos y Análisis Estratégico</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 1rem auto 0;">Casos de
+                    uso, arquitecturas y estrategias de automatización corporativa.</p>
+            </div>
+
+            <div id="home-blog-grid" class="blog-grid" style="margin-top: 3rem; margin-bottom: 2rem;">
+                <!-- Dynamically populated from JS -->
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <button class="btn-secondary" onclick="window.location.href='blog.html'">Ver todos los
+                    artículos</button>
+            </div>
+        </div>
+    </section>
+
     <!-- Bottom CTA -->
     <section class="cta-section">
         <div class="container">
@@ -251,6 +277,14 @@
                         <li><a href="#">Automatización WhatsApp</a></li>
                         <li><a href="#">Backoffice Inteligente</a></li>
                         <li><a href="#">Integración de CRM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li><a href="blog.html">Recursos B2B (Blog)</a></li>
+                        <li><a href="index.html">Sobre Nosotros</a></li>
+                        <li><a href="index.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
@@ -287,7 +321,36 @@
         </div>
     </div>
 
+    <!-- Load the Blog Data for Homepage Preview -->
+    <script src="js/blog-data.js"></script>
+
     <script>
+        // Load latest 3 blog posts into the Homepage
+        document.addEventListener("DOMContentLoaded", () => {
+            const homeBlogGrid = document.getElementById('home-blog-grid');
+            if (homeBlogGrid && typeof blogArticles !== 'undefined') {
+                // Get only the first 3
+                const latestArticles = blogArticles.slice(0, 3);
+                let gridHTML = '';
+                latestArticles.forEach(article => {
+                    gridHTML += `
+                        <a href="blog.html?id=${article.id}" class="blog-card glass">
+                            <div class="blog-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${article.coverImage}'); background-size: cover; background-position: center;"></div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span style="color: var(--accent-cyan); font-weight: 600; font-size: 0.85rem; text-transform: uppercase;">${article.category}</span>
+                                </div>
+                                <h3 style="font-size: 1.15rem;">${article.title}</h3>
+                                <p style="font-size: 0.9rem; margin-bottom: 1rem;">${article.description.substring(0, 100)}...</p>
+                                <span class="read-more">Leer Artículo →</span>
+                            </div>
+                        </a>
+                    `;
+                });
+                homeBlogGrid.innerHTML = gridHTML;
+            }
+        });
+
         // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
