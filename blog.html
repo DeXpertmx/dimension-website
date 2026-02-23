@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Recursos | Dimensión eXpert</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/DeXpert Social Icon.png">
+</head>
+
+<body>
+    <!-- Background Effect -->
+    <div class="bg-nodes"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled" style="background: var(--bg-night);">
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/DeXpert Logo Wh.png" alt="Dimensión eXpert"
+                        onerror="this.src=''; this.alt='Dimensión eXpert'; this.style.color='#00f0ff'; this.style.fontFamily='Outfit'; this.style.fontSize='1.5rem'; this.style.fontWeight='bold';">
+                </a>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <button class="nav-cta" onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">Solicitar
+                    Diagnóstico</button>
+                <button class="nav-cta"
+                    style="background: transparent; border: 1px solid var(--accent-cyan); color: var(--text-main);"
+                    onclick="window.open('https://booking.dimension.expert', '_blank')">Agendar Cita</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header (Only visible on Main Feed) -->
+    <header id="blog-header" class="hero-section pb-0"
+        style="padding-top: 140px; display: none; min-height: 60vh; position: relative; overflow: hidden;">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="hero-video"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; opacity: 0.5;">
+            <source src="video/video_blog.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"
+            style="background: linear-gradient(to bottom, rgba(6, 9, 19, 0.4), var(--bg-night) 95%);"></div>
+
+        <div class="container" style="text-align: center; position: relative; z-index: 1;">
+            <div class="badge fade-in">RECURSOS B2B</div>
+            <h1 class="fade-in" style="font-size: 3rem; margin-bottom: 1rem;">La Era del <span
+                    class="gradient-text">Software Autónomo</span></h1>
+            <p class="fade-in"
+                style="color: var(--text-muted); font-size: 1.125rem; max-width: 600px; margin: 0 auto 3rem auto;">
+                Análisis táctico y estratégico sobre la implementación de Inteligencia Artificial para la rentabilidad
+                corporativa.
+            </p>
+        </div>
+    </header>
+
+    <!-- Dynamic Container for Grid OR Single Article -->
+    <section class="section" id="blog-section" style="padding-top: 0;">
+        <div class="container" id="blog-container">
+            <!-- Content Injected via JS -->
+            <div style="text-align: center; color: var(--accent-cyan);">Cargando red neuronal...</div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>El momento de integrar Inteligencia Artificial no es mañana. Era hace 12 meses.</h2>
+            <p>Deja de quemar horas de tu equipo en tareas operativas. Averigua exactamente cuántos procesos podrías
+                delegarle a la IA hoy mismo.</p>
+            <button class="btn-primary" style="font-size: 1.25rem; padding: 1.25rem 2.5rem;"
+                onclick="window.open('https://diagnosis.dimension.expert/', '_blank')">⚡ Quiero mi Diagnóstico con
+                IA</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/DeXpert Logo Wh.png" alt="Dimensión eXpert" height="30"
+                        onerror="this.style.display='none'">
+                    <h3 style="color: var(--accent-cyan); margin-top: 10px;">Dimensión eXpert</h3>
+                    <p>Sistemas de automatización con IA que trabajan por tu negocio. Escala sin límites.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Soluciones</h4>
+                    <ul>
+                        <li><a href="index.html">Agentes de IA</a></li>
+                        <li><a href="index.html">Automatización WhatsApp</a></li>
+                        <li><a href="index.html">Backoffice Inteligente</a></li>
+                        <li><a href="index.html">Integración de CRM</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="privacidad.html">Política de Privacidad</a></li>
+                        <li><a href="terminos.html">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Dimension eXpert LLC. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Load the Blog Data -->
+    <script src="js/blog-data.js"></script>
+
+    <!-- App Logic for Routing -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+            const container = document.getElementById('blog-container');
+            const header = document.getElementById('blog-header');
+
+            if (articleId) {
+                // Show Single Article View
+                const article = blogArticles.find(a => a.id === articleId);
+
+                if (article) {
+                    // Update Page Title
+                    document.title = article.title + " | Dimensión eXpert";
+
+                    container.innerHTML = `
+                        <div class="article-layout" style="padding-top: 120px;">
+                            <!-- Back Button -->
+                            <a href="blog.html" class="back-link glass">← Volver a todos los artículos</a>
+                            
+                            <!-- Article Header -->
+                            <div class="article-meta">
+                                <span class="badge" style="background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan);">${article.category}</span>
+                                <span style="color: var(--text-muted); font-size: 0.9rem;">${article.date}</span>
+                            </div>
+                            <h1 class="article-title">${article.title}</h1>
+                            <p class="article-description">${article.description}</p>
+                            
+                            <!-- Article Cover Image (With dark overlay) -->
+                            <div class="article-cover" style="width: 100%; height: 400px; background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('${article.coverImage}'); background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 3rem; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5);"></div>
+
+                            <!-- Article Body -->
+                            <div class="article-body">
+                                ${article.content}
+                            </div>
+                            
+                            <!-- Author Box -->
+                            <div class="author-box glass">
+                                <h4 style="color: #fff; margin-bottom: 0.5rem; font-family: var(--font-heading);">El Equipo de Dimensión eXpert</h4>
+                                <p style="color: var(--text-muted); font-size: 0.95rem;">Construimos arquitecturas operativas automatizadas para escalar negocios B2B usando Modelos de Lenguaje Grandes, Agentes Inteligentes y Flujos API. <strong><a href="https://diagnosis.dimension.expert/" target="_blank" style="color: var(--accent-cyan);">Calcula el ROI de automatizar tu empresa aquí.</a></strong></p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 5rem 0;">
+                            <h2>Artículo no encontrado</h2>
+                            <p style="color: var(--text-muted); margin-top: 1rem; margin-bottom: 2rem;">El recurso que estás buscando no existe o fue movido.</p>
+                            <a href="blog.html" class="btn-primary">Volver al Blog</a>
+                        </div>
+                    `;
+                }
+            } else {
+                // Show Grid (Main Feed)
+                header.style.display = "block";
+
+                let gridHTML = '<div class="blog-grid">';
+
+                blogArticles.forEach(article => {
+                    gridHTML += `
+                        <a href="blog.html?id=${article.id}" class="blog-card glass">
+                            <!-- Dynamically loaded background image from Unsplash with dark overlay -->
+                            <div class="blog-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('${article.coverImage}'); background-size: cover; background-position: center;"></div>
+                            
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span style="color: var(--accent-cyan); font-weight: 600; font-size: 0.85rem; text-transform: uppercase;">${article.category}</span>
+                                    <span style="color: var(--text-muted); font-size: 0.85rem;">${article.date}</span>
+                                </div>
+                                <h3>${article.title}</h3>
+                                <p>${article.description}</p>
+                                <span class="read-more">Leer Artículo →</span>
+                            </div>
+                        </a>
+                    `;
+                });
+
+                gridHTML += '</div>';
+                container.innerHTML = gridHTML;
+            }
+        });
+    </script>
+</body>
+
+</html>
