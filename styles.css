@@ -962,6 +962,9 @@ footer {
     transition: var(--transition-fast);
 }
 
+.send-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--accent-cyan-glow);
 }
 
 /* =========================================
@@ -971,10 +974,16 @@ footer {
 /* Main Grid */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
     margin-top: 3rem;
     margin-bottom: 5rem;
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Card Styling */
